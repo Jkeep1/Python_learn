@@ -1,0 +1,11 @@
+c_sum=2
+for i in range(2,101):
+    for j in range(2,i):
+        if i%j!=0:
+            if j==i-1:
+                c_sum=c_sum+i
+                # print(i)
+        else:
+            break
+
+print(c_sum)
