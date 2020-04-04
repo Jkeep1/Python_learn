@@ -1,0 +1,17 @@
+# 四位玫瑰数
+'''
+四位玫瑰数是4位数的自幂数。自幂数是指一个 n 位数，它的每个位上的数字的 n 次幂之和等于它本身。
+'''
+
+k=1000
+c_sum=0
+for k in range(1000,10000):
+    strk=str(k)
+    # print(k)
+    for a in strk:
+        # print(a)
+        c_sum=c_sum+eval(a)**4
+    if c_sum==k:
+        print(c_sum)
+    else:
+        c_sum=0
