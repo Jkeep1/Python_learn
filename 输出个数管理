@@ -1,0 +1,26 @@
+'''
+获得用户输入数字N，计算并输出从N开始的5个质数，
+单行输出，质数间用逗号,分割。
+'''
+count=0
+x_start=eval(input())
+
+for i in range(x_start,101):
+   if count==5:  
+
+       break
+   for j in range(2,i):
+        
+
+        if i%j!=0:
+
+            if j==i-1:
+                if count==4:
+                    print(i)
+                else:
+                    print(i,end=",")
+                count=count+1
+
+        else:
+
+            break
