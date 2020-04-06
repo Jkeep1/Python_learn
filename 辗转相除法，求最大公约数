@@ -1,0 +1,15 @@
+
+def fun(x,y):
+    a = max(x,y)
+    b = min(x,y)
+    if a%b == 0:
+        return b
+    else:
+        return fun(b, a%b)
+    #  如果模块是被直接运行的，
+    # 则代码块被运行，如果模块是被导入的，
+    # 则代码块不被运行。
+if __name__ == '__main__':
+    x = int(input())
+    y = int(input())
+    print(fun(x,y))
