@@ -1,0 +1,26 @@
+
+# 中文词频统计
+import jieba
+filename="C:/Users/HWJ/Desktop/dataAnalysis/FuRong_Town.txt"
+txt=open(filename,"r",encoding="utf-8").read()
+words=jieba.lcut(txt)
+counts={}
+excludes={"没有","自己","一个","什么","我们","他们",\
+          "就是","芙蓉镇","镇上","大队","这个",\
+              "人家","女人","还是","男人","起来",\
+                  "眼睛","五类分子"}
+for word in words:
+    if len(word)==1:
+        continue
+    elif word=="主任":
+        rword="谷燕山"
+    else:
+        rword=word
+    counts[rword]=counts.get(rword,0)+1
+for word in excludes:
+    del counts[word]
+items=list(counts.items())
+items.sort(key=lambda x:x[1],reverse=True)
+for i in range(6):
+    word,count=items[i]
+    print("{0:<10}{1:>5}".format(word,count))
