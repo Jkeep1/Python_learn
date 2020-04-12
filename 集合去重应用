@@ -1,0 +1,13 @@
+'''
+查找文件中独特行的数目
+1、集合去重，获得所有不相同的行元素
+2、列表去除所有不同行（删掉了只有一个的不同行，即独特行）
+3、1-2的集合
+'''
+f = open("latex.log")
+ls = f.readlines()
+s = set(ls)
+for i in s:
+    ls.remove(i)
+t = set(ls)
+print("共{}独特行".format(len(s)-len(t)))
